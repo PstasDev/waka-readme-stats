@@ -46,6 +46,7 @@ jobs:
           INPUT_SHOW_HIREABLE: False
           INPUT_SHOW_LANGUAGE: True
           INPUT_SYMBOL_VERSION: 1
+          INPUT_TOTAL_DISK_SPACE: 256
           INPUT_SHOW_LINES_OF_CODE: True
           INPUT_SHOW_LOC_CHART: True
           INPUT_SHOW_PROFILE_VIEWS: True

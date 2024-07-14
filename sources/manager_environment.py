@@ -47,5 +47,9 @@ class EnvironmentManager:
     IGNORED_REPOS = getenv("INPUT_IGNORED_REPOS", "").replace(" ", "").split(",")
     SYMBOL_VERSION = int(getenv("INPUT_SYMBOL_VERSION"))
 
+    # Customstats
+
+    TOTAL_DISK_SPACE = int(getenv("INPUT_TOTAL_DISK_SPACE"))
+
     DEBUG_LOGGING = getenv("INPUT_DEBUG_LOGGING", "0").lower() in _TRUTHY
     DEBUG_RUN = getenv("DEBUG_RUN", "False").lower() in _TRUTHY
