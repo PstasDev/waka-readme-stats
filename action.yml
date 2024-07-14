@@ -31,6 +31,11 @@ inputs:
     required: false
     description: 'Show the list of OS Worked on In dev metrics'
     default: "True"
+  
+  SHOW_HIREABLE:
+    required: false
+    description: 'Show if the user is hireable'
+    default: "False"
 
   SHOW_PROJECTS:
     required: false
