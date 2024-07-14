@@ -102,12 +102,13 @@ async def get_short_github_info() -> str:
     else:
         DBM.p("GitHub contributions data unavailable!")
 
-    DBM.i("Adding opted for hire info...")
-    opted_to_hire = GHM.USER.hireable
-    if opted_to_hire:
-        stats += f"> 💼 {FM.t('Opted to Hire')}\n > \n"
-    else:
-        stats += f"> 🚫 {FM.t('Not Opted to Hire')}\n > \n"
+    if EM.SHOW_HIREABLE:
+        DBM.i("Adding opted for hire info...")
+        opted_to_hire = GHM.USER.hireable
+        if opted_to_hire:
+            stats += f"> 💼 {FM.t('Opted to Hire')}\n > \n"
+        else:
+            stats += f"> 🚫 {FM.t('Not Opted to Hire')}\n > \n"
 
     DBM.i("Adding public repositories info...")
     public_repo = GHM.USER.public_repos

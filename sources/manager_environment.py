@@ -21,6 +21,7 @@ class EnvironmentManager:
     PUSH_BRANCH_NAME = getenv("INPUT_PUSH_BRANCH_NAME", "")
 
     SHOW_OS = getenv("INPUT_SHOW_OS", "False").lower() in _TRUTHY
+    SHOW_HIREABLE = getenv("INPUT_SHOW_HIREABLE", "False").lower() in _TRUTHY
     SHOW_PROJECTS = getenv("INPUT_SHOW_PROJECTS", "True").lower() in _TRUTHY
     SHOW_EDITORS = getenv("INPUT_SHOW_EDITORS", "True").lower() in _TRUTHY
     SHOW_TIMEZONE = getenv("INPUT_SHOW_TIMEZONE", "True").lower() in _TRUTHY
