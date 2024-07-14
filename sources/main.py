@@ -125,6 +125,21 @@ async def get_short_github_info() -> str:
     else:
         stats += f"> 🔑 {FM.t('private repository') % private_repo} \n > \n"
 
+    if EM.SHOW_LINES_OF_CODE:
+        DBM.i("Adding lines of code info...")
+        total_loc = sum([yearly_data[y][q][d]["add"] for y in yearly_data.keys() for q in yearly_data[y].keys() for d in yearly_data[y][q].keys()])
+        data = f"{intword(total_loc)} {FM.t('Lines of code')}"
+        stats += f"> 📊 {data} total lines of code written All Time \n > \n"
+
+        # For an average computer, it takes 200 wh to write for an hour.
+        # An average human writes 56 lines of code in an hour.
+        # So, 200/56 = 3.57 wh per line of code.
+        # 1 wh in carbon emission is 0.0006 kg.
+        # So, 3.57 * 0.0006 = 0.002142 kg of carbon emission per line of code.
+
+        carbon_emission = 3.57 * total_loc * 0.0006
+        stats += f"> 🌍 {"Carbon footprint" % intword(carbon_emission)} kgs \n > \n"
+
     DBM.g("Short GitHub info added!")
     return stats
 
@@ -159,6 +174,7 @@ async def get_stats() -> str:
 
     stats = str()
     repositories = await collect_user_repositories()
+    global yearly_data, commit_data
 
     if EM.SHOW_LINES_OF_CODE or EM.SHOW_LOC_CHART or EM.SHOW_COMMIT or EM.SHOW_DAYS_OF_WEEK:  # calculate commit data if any one of these is enabled
         yearly_data, commit_data = await calculate_commit_data(repositories)
