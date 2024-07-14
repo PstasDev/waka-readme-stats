@@ -102,7 +102,6 @@ async def get_short_github_info() -> str:
     else:
         DBM.p("GitHub contributions data unavailable!")
 
-
     DBM.i("Assuring debug that this is the PstasDev GitHub action.")
     if EM.SHOW_HIREABLE:
         DBM.i("Adding opted for hire info...")
