@@ -29,7 +29,7 @@ class EnvironmentManager:
     SHOW_LANGUAGE = getenv("INPUT_SHOW_LANGUAGE", "True").lower() in _TRUTHY
     SHOW_LINES_OF_CODE = getenv("INPUT_SHOW_LINES_OF_CODE", "False").lower() in _TRUTHY
     SHOW_LANGUAGE_PER_REPO = getenv("INPUT_SHOW_LANGUAGE_PER_REPO", "True").lower() in _TRUTHY
-    SHOW_LOC_CHART = getenv("INPUT_SHOW_LOC_CHART", "True").lower() in _TRUTHY
+    SHOW_LOC_CHART = getenv("INPUT_SHOW_LOC_CHART", "False").lower() in _TRUTHY
     SHOW_DAYS_OF_WEEK = getenv("INPUT_SHOW_DAYS_OF_WEEK", "True").lower() in _TRUTHY
     SHOW_PROFILE_VIEWS = getenv("INPUT_SHOW_PROFILE_VIEWS", "True").lower() in _TRUTHY
     SHOW_SHORT_INFO = getenv("INPUT_SHOW_SHORT_INFO", "True").lower() in _TRUTHY
