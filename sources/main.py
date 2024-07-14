@@ -138,7 +138,7 @@ async def get_short_github_info() -> str:
         # So, 3.57 * 0.0006 = 0.002142 kg of carbon emission per line of code.
 
         carbon_emission = 3.57 * total_loc * 0.0006
-        stats += f"> 🌍 {"Carbon footprint" % intword(carbon_emission)} kgs \n > \n"
+        stats += f"> 🌍 Carbon footprint: {intword(carbon_emission)} kgs \n > \n"
 
     DBM.g("Short GitHub info added!")
     return stats
