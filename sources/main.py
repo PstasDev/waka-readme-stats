@@ -89,9 +89,9 @@ async def get_short_github_info() -> str:
         DBM.p("Please add new github personal access token with user permission!")
     else:
         if EM.TOTAL_DISK_SPACE:
-            disk_usage = f"{naturalsize(GHM.USER.disk_usage)}/{EM.TOTAL_DISK_SPACE} GB {FM.t('Used in GitHub Storage')} ({int(GHM.USER.disk_usage / (EM.TOTAL_DISK_SPACE * 1000000000) * 100)}% of the total disk space available for me Locally)"
+            disk_usage = f"{naturalsize(GHM.USER.disk_usage)}/{EM.TOTAL_DISK_SPACE} GB Used in GitHub Storage ({int(GHM.USER.disk_usage / (EM.TOTAL_DISK_SPACE * 1000000000) * 100)}% of the total disk space available for me Locally)"
         else:
-            disk_usage = FM.t("Used in GitHub's Storage") % naturalsize(GHM.USER.disk_usage)
+            disk_usage = "Used in GitHub's Storage" % naturalsize(GHM.USER.disk_usage)
             
     stats += f"> 📦 {disk_usage} \n > \n"
 
